@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://strapify.s3.amazonaws.com/strapify-v0.0.7.js"
+      data-strapi-api-url="http://localhost:1337"
+      type="text/javascript"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,700;0,900;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Strapify Demo</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul class="navbar">
+        <li class="navbar-logo"><a href="/">StrategiCorp Solutions Inc.</a></li>
+        <li class="navbar-item">
+          <a href="newsletter.html">Newsletter</a>
+        </li>
+        <li class="navbar-item"><a href="employees.html">Our Team</a></li>
+        <li class="navbar-item"><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <!-- EMPLOYEES COLLECTION -->
+    <!-- Note - 'employees' is the plural API ID from Strapi -->
+    <div
+      strapi-collection="employees"
+      class="employees"
+      strapi-page="1"
+      strapi-page-size="6"
+      strapi-sort="Name:asc"
+    >
+      <h1 class="heading block-centered mb-1">Our Team</h1>
+      <!-- Filtering -->
+      <div class="flex gap mb-1">
+        <button strapi-filter-control="">
+          All
+        </button>
+        <button strapi-filter-control="[JobTitle][$containsi]=Engineer">
+          Engineering
+        </button>
+        <button strapi-filter-control="[JobTitle][$notContainsi]=Engineer">
+          Admin
+        </button>
+        <select strapi-sort-control="">
+          <option strapi-control-value="Name:asc">Name (a-z)</option>
+          <option strapi-control-value="JobTitle:asc">
+            Job Title (a-z)
+          </option>
+          <option strapi-control-value="DateStarted:asc">Seniority</option>
+        </select>
+      </div>
+      <!-- Employee Grid -->
+      <div class="flex-grid">
+        <a
+          class="card"
+          strapi-template
+          strapi-into="/employee.html?person={{Slug}} -> href"
+        >
+          <img strapi-field="Headshot" />
+          <div>
+            <p strapi-field="Name"></p>
+            <p strapi-field="JobTitle"></p>
+            <small>Started: <span strapi-field="DateStarted"></span></small>
+          </div>
+        </a>
+      </div>
+      <!-- Pagination -->
+      <div class="flex gap mt-1">
+        <button strapi-page-control="-1">🡠</button>
+        <button strapi-page-control="+1">🡢</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Get references to all buttons with the class "toggle-button"
+    const buttons = document.querySelectorAll("[strapi-filter-control]");
+
+    // Add a click event listener to each button
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Remove the "active" class from all buttons
+        buttons.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove("active");
+          }
+        });
+
+        // Toggle the "active" class on the clicked button
+        button.classList.add("active");
+      });
+    });
+  </script>
+</html>

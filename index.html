@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://strapify.s3.amazonaws.com/strapify-v0.0.7.js"
+      data-strapi-api-url="http://localhost:1337"
+      type="text/javascript"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,700;0,900;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Strapify Demo</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li class="navbar-logo"><a href="/">StrategiCorp Solutions Inc.</a></li>
+        <li class="navbar-item">
+          <a href="newsletter.html">Newsletter</a>
+        </li>
+        <li class="navbar-item"><a href="employees.html">Our Team</a></li>
+        <li class="navbar-item"><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div
+      class="hero"
+      strapi-single-type-background-image="landing-page-content.Background"
+    >
+      <h1 strapi-single-type="landing-page-content.Tagline"></h1>
+      <div>
+        <a href="employees.html" class="btn">Our Team</a>
+        <a href="about.html" class="btn">About Us</a>
+      </div>
+    </div>
+  </body>
+</html>

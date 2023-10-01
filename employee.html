@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Bio</title>
+    <script
+      src="https://strapify.s3.amazonaws.com/strapify-v0.0.7.js"
+      data-strapi-api-url="http://localhost:1337"
+      type="text/javascript"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,700;0,900;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul class="navbar">
+        <li class="navbar-logo"><a href="/">StrategiCorp Solutions Inc.</a></li>
+        <li class="navbar-item">
+          <a href="newsletter.html">Newsletter</a>
+        </li>
+        <li class="navbar-item"><a href="employees.html">Our Team</a></li>
+        <li class="navbar-item"><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div
+      class="bio-page"
+      strapi-collection="employees"
+      strapi-filter="[Slug][$eq]=qs.person"
+    >
+      <div class="container" strapi-template>
+        <h1 strapi-field="Name"></h1>
+        <img strapi-field="Headshot" class="headshot" />
+        <h2 strapi-field="JobTitle"></h2>
+        <p>Started on <span strapi-field="DateStarted"></span></p>
+        <div strapi-field="Bio"></div>
+      </div>
+    </div>
+  </body>
+</html>

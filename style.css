@@ -1,0 +1,349 @@
+.btn,
+button:not(.navbar-item button) {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  display: flex;
+  transition: transform 0.2s ease;
+  font-size: 20px;
+}
+
+.btn:hover,
+button:hover:not(.navbar-item button) {
+  transform: translateY(-3px);
+}
+
+.btn.active,
+button.active {
+  border-color: gray !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 300px;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.hero > div {
+  display: flex;
+  gap: 8px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  margin-top: 10vh;
+  margin-bottom: 36px;
+}
+
+.article img {
+  max-height: 250px;
+  border-radius: 8px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  font-weight: 700;
+  padding-bottom: 8px;
+  border-bottom: 2px solid black;
+  width: fit-content;
+}
+
+.richText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: "Urbanist", sans-serif !important;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap {
+  gap: 8px;
+}
+
+.mt-1 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 2rem;
+}
+
+.block-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label,
+button {
+  display: block;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  margin: 8px 0;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:not(.navbar-item button) {
+  border: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.login {
+  margin: auto;
+  width: fit-content;
+  margin-top: 20vh;
+  padding: 36px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.newsletters {
+  margin-top: 10vh;
+  max-width: 500px;
+  padding: 64px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add some basic styling to the navbar */
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style for navbar items (buttons) */
+li.navbar-item {
+  float: right;
+}
+
+/* Style for navbar logo */
+li.navbar-logo {
+  float: left;
+  font-weight: 700;
+}
+
+/* Style for the navbar links (button text) */
+li.navbar-item a,
+li.navbar-item button,
+li.navbar-logo a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding: 16px;
+}
+
+/* Change the background color of the navbar items on hover */
+li.navbar-item a:hover,
+li.navbar-item button:hover {
+  background-color: #555;
+}
+
+.employees {
+  margin-top: 10vh;
+  max-width: 700px;
+  padding: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.login-heading {
+  font-size: 24px;
+  max-width: 200px;
+  margin-bottom: 8px;
+}
+
+/* Style the custom-select container */
+select {
+  position: relative;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the select element */
+select {
+  width: auto;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid lightgray;
+  outline: none;
+  appearance: none; /* Remove default select arrow */
+  cursor: pointer;
+}
+
+/* Style the dropdown arrow */
+select::after {
+  content: "\25BC"; /* Unicode for the down arrow character */
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure clicks pass through to the select element */
+}
+
+.bio-page {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 5vh;
+}
+
+.bio-page .headshot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bio-page .container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.bio-page h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.bio-page h2 {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #666;
+}
+
+.bio-page p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.bio-page .bio {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 20px;
+}
